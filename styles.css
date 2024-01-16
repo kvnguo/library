@@ -1,0 +1,211 @@
+/* Color variables for consistent styling */
+:root {
+    --white: #ffffff; 
+    --eggshell: #e9e5cd; 
+    --windsor: #a34b14;
+    --sepia: #633100; 
+    --seal: #3d1e00;
+    --silver: #c2c2c2;
+}
+
+/* Global font styling */
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Body and HTML layout and background styling */
+body, html{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 100px auto; 
+    background-color: var(--eggshell);
+}
+
+/* Header styling */
+.header {
+    grid-row: 1 / 2; 
+    background-color: var(--white);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 2%; 
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 10px 2px var(--silver);
+}
+
+/* Log-in button styling with hover effect */
+.log-in {
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    background-color: var(--white);
+    transition: background-color .3s, transform 0.1s;
+}
+
+.log-in:hover{
+    background-color: var(--silver);
+    transform: scale(1.01);
+}
+
+/* Main content area styling */
+.main {
+    background-color: var(--eggshell);
+}
+
+/* Icon container styling */
+.icon-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.icon-container > .material-icons{
+    font-size: 40px;
+    color: var(--windsor);
+    transition: font-size 0.6s, color 0.4s, transform 0.6s;
+}
+
+.icon-container > .material-icons:hover{
+    font-size: 45px;
+    color: var(--sepia);
+    transform: rotate(45deg);
+    transition: font-size 0.3s, color 0.2s, transform 0.3s;
+}
+
+/* Dialog styling */
+dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+dialog {
+    text-align: center;
+    border-radius: 10px;
+    width: 30vh;
+    min-width: 250px;
+    background-color: var(--eggshell);
+    color: var(--sepia);
+    opacity: 0;
+    transform: scale(0);
+    transition:
+        opacity 0.1s ease-out,
+        transform 0.1s ease-out,
+        overlay 0.1s ease-out allow-discrete,
+        display 0.1s ease-out allow-discrete;
+}
+
+/* Dialog backdrop styling with transition effects */
+@starting-style {
+    dialog[open] {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    transition:
+        display 0.1s allow-discrete,
+        overlay 0.1s allow-discrete,
+        background-color 0.1s;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Form styling */
+form {
+    display: grid;
+    grid-template-rows: repeat(6 1fr);
+    grid-template-columns: 1fr 1fr;
+    padding: 10%;
+}
+
+/* Styling for input fields, headings, and the "Have you read it?" container */
+input, h2, .have-read-container {
+    grid-column: 1 / 3;
+}
+
+/* Styling for input fields and buttons with common padding and margin */
+input, h2, button {
+    padding: 5%;
+    margin: 5%;
+}
+
+/* Styling for input fields and buttons with border and border-radius */
+input, button {
+    border: 1px solid var(--sepia);
+    border-radius: 10px;
+}
+
+/* Styling for "Have you read it?" container with flex layout */
+.have-read-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for Cancel and Confirm buttons with hover effects */
+#cancelBtn, #confirmBtn {
+    background-color: var(--sepia);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    transition: background-color .3s, transform 0.1s;
+}
+
+#cancelBtn:hover, #confirmBtn:hover {
+    background-color: var(--seal);
+    transform: scale(1.01);
+}
+
+/* Styling for book container with grid layout, margin, and gap */
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 15px;
+    gap: 30px;
+}
+
+/* Styling for individual book with padding, border-radius, flex layout, and font-size */
+.book {
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(40px + calc(-1vw));
+    background-color: var(--sepia);
+    color: var(--eggshell);
+}
+
+/* Styling for book details with additional padding */
+.book > div{
+    padding: 2%;
+}
+
+/* Styling for book title with specific font-size */
+.bookTitle {
+    font-size: calc(50px + calc(-1vw));
+}
+
+/* Styling for book buttons with width, background-color, and transition effect */
+.book > button {
+    width: 80%;
+    background-color: var(--eggshell);
+    transition: transform 0.1s;
+    color: #3d1e00;
+    font-size: calc(40px + calc(-1vw));
+    margin: 2%;
+}
+
+/* Styling for book buttons with hover effect */
+.book > button:hover {
+    transform: scale(1.01);
+}

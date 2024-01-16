@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="myscript.js" defer></script>
+</head>
+<body>
+    <!-- Header with title and log-in button -->
+    <div class="header">
+        <h1>LIBRARY</h1>
+        <button class="log-in">Log In</button>
+    </div>
+    
+    <!-- Main content area -->
+    <div class="main">
+        <!-- Container for displaying books -->
+        <div class="book-container"></div>
+        
+        <!-- Container for the add book icon -->
+        <div class="icon-container">
+            <!-- Material Icon for adding a new book -->
+            <i class="material-icons">add_circle</i>
+        </div>
+    </div>
+    
+    <!-- Dialog for adding a new book -->
+    <dialog>
+        <!-- Form for entering book details -->
+        <form>
+            <h2>New Book</h2>
+            
+            <!-- Input fields for book title, author, and rating -->
+            <label for="title"></label>
+            <input type="text" name="book-title" id="title" placeholder="Title">
+            
+            <label for="author"></label>
+            <input type="text" name="book-author" id="author" placeholder="Author">
+            
+            <label for="rating"></label>
+            <input type="number" name="book-rating" id="rating" placeholder="Rating out of 5" min="1" max="5">
+            
+            <!-- Container for "Have you read it?" checkbox -->
+            <div class="have-read-container">
+                <label for="have-read">Read?</label>
+                <input type="checkbox" name="book-read" value="yes" id="have-read">
+            </div>
+            
+            <!-- Cancel and Confirm buttons -->
+            <button value="cancel" formmethod="dialog" id="cancelBtn">Cancel</button>
+            <button value="confirm" formmethod="dialog" id="confirmBtn">Confirm</button>
+        </form>
+    </dialog>
+</body>
+</html>
